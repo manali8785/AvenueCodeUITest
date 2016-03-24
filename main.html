@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="UIChallenge">
 <head>
     <meta charset="UTF-8">
     <title>Avenue Code UI Challenge</title>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body ng-controller="controller">
     <h1>GeoLocation Test</h1>
     <hr>
     <div class="section mylocation">
@@ -19,16 +20,19 @@
             </div>
             <div class="panel-body">
                 <table class="table table-striped">
-                    <tr><td>1</td><td>manali</td></tr>
-                    <tr><td>1</td><td>manali</td></tr>
-                    <tr><td>1</td><td>manali</td></tr>
-
+                    <tr><td>IP</td><td>{{data.query}}</td></tr>
+                    <tr><td>Country</td><td>{{data.country}}</td></tr>
+                    <tr><td>Region</td><td>{{data.regionName}}</td></tr>
+                    <tr><td>City</td><td>{{data.city}}</td></tr>
+                    <tr><td>Time Zone</td><td>{{data.timezone}}</td></tr>
+                    <tr><td>Latitude</td><td>{{data.lat}}</td></tr>
+                    <tr><td>Longitude</td><td>{{data.lon}}</td></tr>
                 </table>
             </div>
             <div class="panel-footer">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default">My loaction</button>
+                        <button type="button" class="btn btn-default" ng-click="getMyLocation()">My loaction</button>
                     </div>
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-default">Reset</button>
@@ -38,7 +42,6 @@
         </div>
     </div>
     <div class="section container">
-
     </div>
 </body>
 </html>
