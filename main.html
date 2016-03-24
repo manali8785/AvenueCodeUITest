@@ -9,13 +9,13 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="main.css">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRmJhNKSn-Pm1grU6_lME00ayARE2dZFo&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRmJhNKSn-Pm1grU6_lME00ayARE2dZFo">
     </script>
 </head>
 <body ng-controller="controller">
     <h1>GeoLocation Test</h1>
     <div class="section mylocation">
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Estimated location</h3>
             </div>
@@ -47,8 +47,8 @@
     <div class="section container">
         <form class="form-inline">
             <div class="form-group">
-                <label for="exampleInputName2">Website</label>
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="www.facebook.com">
+                <label for="website">Website</label>
+                <input type="text" class="form-control" id="website" ng-model="website" placeholder="Enter website name">
             </div>
             <button type="submit" class="btn btn-primary" ng-click="locate()">Locate</button>
         </form>

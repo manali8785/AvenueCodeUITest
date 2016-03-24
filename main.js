@@ -11,17 +11,14 @@ function initMap() {
         zoom: 8
     });
 }
-app.controller('controller',function($scope){
+app.controller('controller',function($scope,$http){
 
     $scope.getMyLocation=function(){
         console.log("getting my location...");
-        $.ajax({
-            type : 'GET',
-            url : 'http://ip-api.com/json/',
-            success : function(response){
-                console.log('success function');
-                $scope.data=response;
-            }
+        $http.get("http://ip-api.com/json/").then(function(config){
+            $scope.data=config.data;
+        },function(err){
+            console.log("Error:",err);
         });
     }
 
@@ -37,6 +34,25 @@ app.controller('controller',function($scope){
 
     $scope.locate=function(){
         console.log("locating website");
+        //$scope.website="www.google.com";
+
+        $http.get("http://ip-api.com/json/"+$scope.website).then(function(config){
+            var myLatLng = {lat: config.data.lat, lng: config.data.lon};
+            console.log(myLatLng);
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
+
+        },function(err){
+            console.log("Error:",err);
+        });
 
     }
 });
