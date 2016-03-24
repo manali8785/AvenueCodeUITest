@@ -1,0 +1,25 @@
+h1{
+    text-align: center;
+}
+.section{
+    float: left;
+    box-sizing: border-box;
+}
+
+.mylocation{
+    height: 500px;
+    width:30%;
+   // border:1px solid black;
+}
+
+.container{
+    height: 500px;
+    width:70%;
+   // border:1px solid red;
+}
+.panel{
+    width:100%;
+}
+.panel-heading{
+    text-align: center;
+}
