@@ -9,39 +9,50 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="main.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRmJhNKSn-Pm1grU6_lME00ayARE2dZFo&callback=initMap">
+    </script>
 </head>
 <body ng-controller="controller">
     <h1>GeoLocation Test</h1>
-    <hr>
     <div class="section mylocation">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Estimated location</h3>
             </div>
             <div class="panel-body">
-                <table class="table table-striped">
-                    <tr><td>IP</td><td>{{data.query}}</td></tr>
-                    <tr><td>Country</td><td>{{data.country}}</td></tr>
-                    <tr><td>Region</td><td>{{data.regionName}}</td></tr>
-                    <tr><td>City</td><td>{{data.city}}</td></tr>
-                    <tr><td>Time Zone</td><td>{{data.timezone}}</td></tr>
-                    <tr><td>Latitude</td><td>{{data.lat}}</td></tr>
-                    <tr><td>Longitude</td><td>{{data.lon}}</td></tr>
+                <table class="table">
+                    <tbody>
+                        <tr><th>IP</th><td>{{data.query}}</td><td><button class="help">?</button></td></tr>
+                        <tr><th>Country</th><td>{{data.country}}</td><td><button class="help">?</button></td></tr>
+                        <tr><th>Region</th><td>{{data.regionName}}</td><td><button class="help">?</button></td></tr>
+                        <tr><th>City</th><td>{{data.city}}</td><td><button class="help">?</button></td></tr>
+                        <tr><th>Time Zone</th><td>{{data.timezone}}</td><td><button class="help">?</button></td></tr>
+                        <tr><th>Latitude</th><td>{{data.lat}}</td><td><button class="help">?</button></td></tr>
+                        <tr><th>Longitude</th><td>{{data.lon}}</td><td><button class="help">?</button></td></tr>
+                    </tbody>
                 </table>
             </div>
             <div class="panel-footer">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" ng-click="getMyLocation()">My loaction</button>
+                        <button type="button" class="btn btn-default" ng-click="getMyLocation()">My Location</button>
                     </div>
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default">Reset</button>
+                        <button type="button" class="btn btn-default" ng-click="reset()">Reset</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="section container">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="exampleInputName2">Website</label>
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="www.facebook.com">
+            </div>
+            <button type="submit" class="btn btn-primary" ng-click="locate()">Locate</button>
+        </form>
+        <div id="map"></div>
     </div>
 </body>
 </html>

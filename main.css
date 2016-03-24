@@ -9,17 +9,28 @@ h1{
 .mylocation{
     height: 500px;
     width:30%;
-    border:1px solid black;
+  border:1px solid black;
 }
 
 .container{
     height: 500px;
     width:70%;
     border:1px solid red;
+    position: relative;
 }
 .panel{
     width:100%;
 }
 .panel-heading{
     text-align: center;
+}
+#map {
+    height: 90%;
+    width:100%;
+    position: absolute;
+    margin: 5px;
+}
+
+form{
+    margin: 5px;
 }
