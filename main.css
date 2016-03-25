@@ -9,7 +9,7 @@ h1{
 .mylocation{
     height: 500px;
     width:30%;
-  border:1px solid black;
+  // border:1px solid black;
 }
 
 .container{
@@ -29,6 +29,8 @@ h1{
     width:100%;
     position: absolute;
     margin: 5px;
+    border:1px solid green;
+
 }
 
 form{
