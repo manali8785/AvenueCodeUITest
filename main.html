@@ -13,45 +13,46 @@
     </script>
 </head>
 <body ng-controller="controller">
-    <h1>GeoLocation Test</h1>
-    <div class="section mylocation">
+    <h1>GeoLocation Test</h1><hr>
+    <div id="mylocation" class="section">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Estimated location</h3>
             </div>
             <div class="panel-body">
-                <table class="table">
+                <table class="table table-bordered">
                     <tbody>
-                        <tr><th>IP</th><td>{{data.query}}</td><td><button class="help">?</button></td></tr>
-                        <tr><th>Country</th><td>{{data.country}}</td><td><button class="help">?</button></td></tr>
-                        <tr><th>Region</th><td>{{data.regionName}}</td><td><button class="help">?</button></td></tr>
-                        <tr><th>City</th><td>{{data.city}}</td><td><button class="help">?</button></td></tr>
-                        <tr><th>Time Zone</th><td>{{data.timezone}}</td><td><button class="help">?</button></td></tr>
-                        <tr><th>Latitude</th><td>{{data.lat}}</td><td><button class="help">?</button></td></tr>
-                        <tr><th>Longitude</th><td>{{data.lon}}</td><td><button class="help">?</button></td></tr>
+                        <tr><th>IP</th><td class="location_value">{{data.query}}</td><td class="helpcol"><button class="help">?</button></td></tr>
+                        <tr><th>Country</th><td class="location_value">{{data.country}}</td><td class="helpcol"><button class="help">?</button></td></tr>
+                        <tr><th>Region</th><td class="location_value">{{data.regionName}}</td><td class="helpcol"><button class="help">?</button></td></tr>
+                        <tr><th>City</th><td class="location_value">{{data.city}}</td><td class="helpcol"><button class="help">?</button></td></tr>
+                        <tr><th>Time Zone</th><td class="location_value">{{data.timezone}}</td><td class="helpcol"><button class="help">?</button></td></tr>
+                        <tr><th>Latitude</th><td class="location_value">{{data.lat}}</td><td class="helpcol"><button class="help">?</button></td></tr>
+                        <tr><th>Longitude</th><td class="location_value">{{data.lon}}</td><td class="helpcol"><button class="help">?</button></td></tr>
                     </tbody>
                 </table>
             </div>
             <div class="panel-footer">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" ng-click="getMyLocation()">My Location</button>
+                        <button type="button" class="btn btn-primary" ng-click="getMyLocation()">My Location</button>
                     </div>
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" ng-click="reset()">Reset</button>
+                        <button type="button" class="btn btn-primary" ng-click="reset()">Reset</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="section container">
-        <form class="form-inline">
-            <div class="form-group">
-                <label for="website">Website</label>
+    <div id="container" class="section">
+        <div id="form" class="col-lg-6">
+            <div class="input-group">
                 <input type="text" class="form-control" id="website" ng-model="website" placeholder="Enter website name">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="locate()">Locate</button>
+                  </span>
             </div>
-            <button type="submit" class="btn btn-primary" ng-click="locate()">Locate</button>
-        </form>
+        </div>
         <div id="map"></div>
     </div>
 </body>

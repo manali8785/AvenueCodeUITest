@@ -1,3 +1,7 @@
+body {
+    margin: 5px;
+}
+
 h1{
     text-align: center;
 }
@@ -6,33 +10,53 @@ h1{
     box-sizing: border-box;
 }
 
-.mylocation{
-    height: 500px;
-    width:30%;
-  // border:1px solid black;
-}
-
-.container{
-    height: 500px;
-    width:70%;
-    border:1px solid red;
-    position: relative;
-}
 .panel{
     width:100%;
+    position: absolute;
 }
+
 .panel-heading{
     text-align: center;
 }
+
+#mylocation{
+    height: 250px;
+    width:30%;
+    position: relative;
+}
+
+#container{
+    height: 500px;
+    width:70%;
+    position: relative;
+}
+
 #map {
     height: 90%;
     width:100%;
     position: absolute;
-    margin: 5px;
-    border:1px solid green;
-
+    margin-top: 5%;
+    margin-left: 2px;
 }
 
-form{
+#form{
     margin: 5px;
+    position: absolute;
+    padding-left: 0;
+}
+
+.location_value{
+    color:red;
+}
+
+.help{
+    visibility: hidden;
+}
+
+th{
+    width:30%;
+}
+
+.helpcol{
+    width:10%;
 }
